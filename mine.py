@@ -1,14 +1,15 @@
-poleno=[['f' , '*' , '*' , '*' , '*' , 'f' , '*' , '*' , '*' ],
-      ['*', '*', '*', '*', '*', '*', '*', '*', '*'],
-      ['*', '*', '*', 'f', '*', 'f', '*', 'f', '*'],
-      ['*', 'f', '*', '*', 'f', 'f', '*', '*', '*'],
-      ['*', '*', 'f', '*', '*', '*', 'f', '*', 'f'],
-      ['f', '*', 'f', '*', '*', 'f', '*', '*', '*'],
-      ['*', '*', '*', '*', '*', '*', '*', '*', '*'],
-      ['*', 'f', '*', '*', 'f', '*', '*', 'f', '*'],
-      ['*', '*', '*', 'f', '*', '*', '*', '*', '*']]
+poleno=[['o', 'o', 'f', 'o', 'o', 'f', 'o', 'o', 'o'],
+      ['o', 'o', 'f', 'o', 'o', 'f', 'o', 'o', 'o'],
+      ['o', 'o', 'f', 'o', 'o', 'f', 'o', 'f', 'o'],
+      ['f', 'f', 'f', 'f', 'f', 'f', 'f', 'o', 'o'],
+      ['o', 'o', 'f', 'o', 'o', 'o', 'f', 'f', 'f'],
+      ['f', 'f', 'f', 'f', 'f', 'f', 'f', 'o', 'o'],
+      ['o', 'o', 'f', 'o', 'o', 'o', 'f', 'o', 'o'],
+      ['o', 'o', 'f', 'o', 'f', 'o', 'f', 'f', 'f'],
+      ['f', 'o', 'f', 'f', 'o', 'o', 'o', 'f', 'o']]
 
-pole=[['*' , '*' , '*' , '*' , '*' , '*' , '*' , '*' , '*' ],
+
+pole=[['*', '*', '*', '*', '*', '*', '*', '*', '*'],
       ['*', '*', '*', '*', '*', '*', '*', '*', '*'],
       ['*', '*', '*', '*', '*', '*', '*', '*', '*'],
       ['*', '*', '*', '*', '*', '*', '*', '*', '*'],
@@ -24,26 +25,10 @@ def vuvod(spisok):
             print(kletka,end=' ')
         print()
 
-import mine
-
-mine.vuvod(mine.pole)
-
-def check(stroka, stolb):
-    pass
-
-game = True
-while game:
-    stroka = int(input('Строка:'))
-    stolb = int(input('Столбик:'))
-
-    mine.check(stroka - 1, stolb - 1)
-    mine.vuvod(mine.pole)
-print('Всё поле открыто!')
-
 def check(stroka, stolb):
     if pole[stroka][stolb]=='*':
         pole[stroka][stolb] = poleno[stroka][stolb]
-        if poleno[stroka][stolb]=='f':
+        if poleno[stroka][stolb]=='o':
             if stroka-1 >=0:
                 check(stroka-1, stolb)
                 if stolb-1 >=0:
@@ -72,11 +57,10 @@ def isOpen():
         if '*' in stroka:
             opened = False
     return opened
-    if mine.isOpen():
-        game = False
+
                 
                     
-                       
+                
         
 
 
